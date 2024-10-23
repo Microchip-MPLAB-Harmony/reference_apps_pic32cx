@@ -1,12 +1,18 @@
 package:
   format-version: "1.0.0"
-  name: "replaceme"
+  name: "reference_apps_pic32cx"
   type: "application"
-  status: "beta"
+  status: "production"
   required: false
   version: "1.0.0"
 
   dependencies:
     - name: "csp"
       type: "package"
-      version: "3.14.0"
+      version: "v3.20.0-E1"
+    - name: "core"
+      type: "package"
+      version: "v3.14.0-E1"
+    - name: "gfx"
+      type: "package"
+      version: "3.15.3"
