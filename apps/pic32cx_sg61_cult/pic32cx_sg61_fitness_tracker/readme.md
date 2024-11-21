@@ -61,7 +61,7 @@ Refer [Project Manifest](./firmware/src/config/pic32cx_sg61_cult/harmony-manifes
 - Mount the **OLED C click** on one **mikroBUS adapter** and then connect the adapter to **EXT 1** extension header
 - Mount the **RNBD451PE Add On Board** on one **mikroBUS adapter** and then connect the adapter to **EXT 2** extension header
 - Power the PIC32CX SG61 Curiosity Ultra Evaluation Board from a Host PC through a Type-A male to Micro-B USB cable connected to Micro-B port (J300) labeled DEBUG USB
-
+\
   <img src="images/pic32cx_sg61_fitness_tracker_setup.png" width="600" height="556">
 
 
@@ -93,11 +93,11 @@ The prebuilt hex file can be programmed by following the below steps.
 - Enable Bluetooth and location from Smartphone settings
 - Perform reset by unplugging and re-plugging the power cable of PIC32CX SG61 Curiosity Ultra Evaluation Board
 - Open the "**Microchip Bluetooth Data (MBD)**" app on your smartphone
-
+\
 <img src="images/mbd_appscreen0.png" width="207" height="450" align="middle">
 
 - Tap on "Bluetooth Smart" icon on the dashboard. If prompted, allow the application to turn on Bluetooth.
-
+\
 <img src="images/mbd_appscreen1.png" width="207" height="450" align="middle">
 
 - After power-up, the application displays the Microchip logo on the OLED C click board and initializes the bluetooth module if necessary, and the heart rate sensor.
@@ -110,32 +110,35 @@ The prebuilt hex file can be programmed by following the below steps.
 
 - Now, scan for Bluetooth devices by tapping START SCAN option on the MBD APP.
 - The RNBD451PE device should appear as **MCHP_PIC32CX_SG16_HR** in the list of Bluetooth devices.
-
+\
 <img src="images/mbd_appscreen2.png" width="207" height="450" align="middle">
 
 - Stop the scan and connect the **MCHP BLE device** by clicking on **MCHP_PIC32CX_SG16_HR**.
 	This will establish a connection between the MBD BLE application and the RNBD451PE BLE device.
-
+\
 <img src="images/mbd_appscreen3.png" width="207" height="450" align="middle">
-
+\
+\
 <img src="images/mbd_appscreen4.png" width="207" height="450" align="middle">
 
 - Once BLE device is connected, the application shows the different services screen. Scrolll down and tap on the **Heart Rate Service**, it will redirect to **Sensor Location** screen.
-
+\
 <img src="images/mbd_appscreen5.png" width="207" height="450" align="middle">
-
+\
+\
 <img src="images/mbd_appscreen6.png" width="207" height="450" align="middle">
 
 - In the bottom right corner of the **Sensor Location** screen, disable and enable the **Notify Button**.
-
+\
 <img src="images/mbd_appscreen6.png" width="207" height="450" align="middle">
-
+\
+\
 <img src="images/mbd_appscreen7.png" width="207" height="450" align="middle">
 
 
 - Place and keep your finger on Pulse Detection Indicator on the heart rate 9 click sensor as shown in the figure below.
 - Observe the red LED in the middle of the heart lits shortly at short intervals of time. This would be the indication the sensor is corectly reading the pulse.
-
+\
 <img src="images/finger_placement.png" width="585" height="156" align="middle">
 
 - Press on SW2 to read the sensor.
@@ -145,11 +148,11 @@ The prebuilt hex file can be programmed by following the below steps.
 - The user can more reads by clicking SW2 without removing the finger from the sensor.
   **Note**: Make sure smartphone screens are not turned off and don't switch to any other App(s) on your smartphone.
 - The heart rate value (in bpm - beats per minute) should be displayed on the **Sensor Location** screen as shown in the image below. 
-
+\
 <img src="images/mbd_appscreen8.png" width="225" height="450" align="middle">
 
 - Also, the same heart rate value should be displayed on the OLED C display.
-
+\
 <img src="images/result_screen.png" width="206" height="197" align="middle">
 
 ### Running the Demo without BLE:
