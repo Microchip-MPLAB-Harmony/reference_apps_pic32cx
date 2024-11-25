@@ -16,3 +16,6 @@ package:
     - name: "gfx"
       type: "package"
       version: "3.15.3"
+    - name: "wireless_rnbd"
+      type: "package"
+      version: "v2.0.3"
