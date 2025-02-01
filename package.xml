@@ -4,6 +4,6 @@
         <Dependency name="csp" version="v3.20.0"/>
         <Dependency name="core" version="v3.14.1"/>
         <Dependency name="gfx" version="3.15.3"/>
-        <Dependency name="wireless_rnbd", version: "v2.0.4"/>
+        <Dependency name="wireless_rnbd" version="v2.0.4"/>
     </Dependencies>
 </Package>
