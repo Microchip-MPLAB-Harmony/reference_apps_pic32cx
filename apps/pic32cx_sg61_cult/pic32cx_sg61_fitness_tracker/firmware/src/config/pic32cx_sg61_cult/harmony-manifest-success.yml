@@ -4,21 +4,21 @@
 
 
 project: pic32cx_sg61_fitness_tracker
-creation_date: 2024-11-15T09:55:31.740+02:00[Europe/Athens]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
+creation_date: 2025-02-14T15:30:09.643+05:30[Asia/Calcutta]    # ISO 8601 format: https://www.w3.org/TR/NOTE-datetime
 operating_system: Windows 10
 mcc_mode: IDE            # [IDE|Standalone|Headless]
 mcc_version: v5.5.1
 mcc_core_version: v5.7.1
 mplabx_version: v6.20        # if MPLAB X plugin only
-harmony_version: v1.5.3
+harmony_version: v1.5.4
 compiler: XC32 4.45
 
 modules:
-    - {name: "csp", version: "v3.19.7"}
-    - {name: "core", version: "v3.13.5"}
+    - {name: "csp", version: "v3.20.0"}
+    - {name: "core", version: "v3.14.1"}
     - {name: "CMSIS_5", version: "5.9.0"}
-    - {name: "wireless_rnbd", version: "v2.0.3"}
+    - {name: "wireless_rnbd", version: "v2.0.4"}
 
 packs:
-    - {name: "PIC32CX-SG61_DFP", version: "1.1.122"}
+    - {name: "PIC32CX-SG61_DFP", version: "1.2.124"}
 
