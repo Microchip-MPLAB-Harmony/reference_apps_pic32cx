@@ -73,9 +73,9 @@
 #define DRV_SSD1351_NCSDeassert(intf) GFX_Disp_Intf_PinControl(intf, \
                                     GFX_DISP_INTF_PIN_CS, \
                                     GFX_DISP_INTF_PIN_SET)
-									
 
-									
+
+
 #define PIXEL_BUFFER_BYTES_PER_PIXEL 2
 static uint8_t pixelBuffer[SCREEN_WIDTH * PIXEL_BUFFER_BYTES_PER_PIXEL];
 
@@ -86,11 +86,11 @@ typedef enum
     ERROR,
 } DRV_STATE;
 
-typedef struct ILI9488_DRV 
-{   
+typedef struct ILI9488_DRV
+{
     /* Driver state */
     DRV_STATE state;
-        
+
     /* Port-specific private data */
     void *port_priv;
 } SSD1351_DRV;
@@ -213,13 +213,13 @@ static int DRV_SSD1351_Configure(SSD1351_DRV *drvPtr)
 void DRV_SSD1351_Update(void)
 {
     uint32_t openVal;
-    
+
     if(drv.state == INIT)
     {
         openVal = GFX_Disp_Intf_Open();
-        
+
         drv.port_priv = (void *)openVal;
-        
+
         if (drv.port_priv == 0)
         {
             drv.state = ERROR;
@@ -247,10 +247,10 @@ gfxResult DRV_SSD1351_BlitBuffer(int32_t x,
     uint8_t parm[4];
 
     GFX_Disp_Intf intf;
-    
+
     if (drv.state != RUN)
         return GFX_FAILURE;
-    
+
     intf = (GFX_Disp_Intf) drv.port_priv;
 
     //Add X offset
@@ -263,7 +263,7 @@ gfxResult DRV_SSD1351_BlitBuffer(int32_t x,
     parm[1] = (x + buf->size.width - 1);
     GFX_Disp_Intf_WriteCommand(intf, 0x15);
     GFX_Disp_Intf_WriteData(intf, parm, 2);
-    
+
     //Write Y/Page Address
     parm[0] = y;
     parm[1] = (y + buf->size.height - 1);
@@ -300,89 +300,89 @@ gfxDriverIOCTLResponse DRV_SSD1351_IOCTL(gfxDriverIOCTLRequest request,
     gfxIOCTLArg_Value* val;
     gfxIOCTLArg_DisplaySize* disp;
     gfxIOCTLArg_LayerRect* rect;
-    
+
     switch(request)
     {
         case GFX_IOCTL_FRAME_END:
         {
             return GFX_IOCTL_OK;
-        }	
+        }
         case GFX_IOCTL_GET_COLOR_MODE:
         {
             val = (gfxIOCTLArg_Value*)arg;
-            
+
             val->value.v_colormode = PIXEL_BUFFER_COLOR_MODE;
-            
+
             return GFX_IOCTL_OK;
         }
         case GFX_IOCTL_GET_BUFFER_COUNT:
         {
             val = (gfxIOCTLArg_Value*)arg;
-            
+
             val->value.v_uint = 1;
-            
+
             return GFX_IOCTL_OK;
         }
         case GFX_IOCTL_GET_DISPLAY_SIZE:
         {
-            disp = (gfxIOCTLArg_DisplaySize*)arg;            
-            
+            disp = (gfxIOCTLArg_DisplaySize*)arg;
+
             disp->width = DISPLAY_WIDTH;
             disp->height = DISPLAY_HEIGHT;
-            
+
             return GFX_IOCTL_OK;
         }
         case GFX_IOCTL_GET_LAYER_COUNT:
         {
             val = (gfxIOCTLArg_Value*)arg;
-            
+
             val->value.v_uint = 1;
-            
+
             return GFX_IOCTL_OK;
         }
         case GFX_IOCTL_GET_ACTIVE_LAYER:
         {
             val = (gfxIOCTLArg_Value*)arg;
-            
+
             val->value.v_uint = 0;
-            
+
             return GFX_IOCTL_OK;
         }
         case GFX_IOCTL_GET_LAYER_RECT:
         {
             rect = (gfxIOCTLArg_LayerRect*)arg;
-            
-            rect->base.id = 0;
+
+            rect->layer.id = 0;
             rect->x = 0;
             rect->y = 0;
             rect->width = DISPLAY_WIDTH;
             rect->height = DISPLAY_HEIGHT;
-            
+
             return GFX_IOCTL_OK;
         }
         case GFX_IOCTL_GET_VSYNC_COUNT:
         {
             val = (gfxIOCTLArg_Value*)arg;
-            
+
             val->value.v_uint = swapCount;
-            
+
             return GFX_IOCTL_OK;
         }
         case GFX_IOCTL_GET_STATUS:
 		{
             val = (gfxIOCTLArg_Value*)arg;
-            
+
             if (drv.state == RUN)
                 val->value.v_uint = 0;
             else
                 val->value.v_uint = 1;
-            
+
             return GFX_IOCTL_OK;
 	    }
         default:
         { }
     }
-    
+
     return GFX_IOCTL_UNSUPPORTED;
 }
 

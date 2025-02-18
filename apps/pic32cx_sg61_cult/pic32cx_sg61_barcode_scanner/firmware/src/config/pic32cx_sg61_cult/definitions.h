@@ -50,8 +50,8 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include "peripheral/nvmctrl/plib_nvmctrl.h"
-#include "peripheral/evsys/plib_evsys.h"
 #include "peripheral/sercom/spi_master/plib_sercom0_spi_master.h"
+#include "peripheral/evsys/plib_evsys.h"
 #include "gfx/legato/generated/le_gen_harmony.h"
 #include "peripheral/port/plib_port.h"
 #include "peripheral/clock/plib_clock.h"
@@ -84,13 +84,13 @@ extern "C" {
 // DOM-IGNORE-END
 
 /* Device Information */
-#define DEVICE_NAME			 "PIC32CX1025SG61128"
-#define DEVICE_ARCH			 "CORTEX-M4"
-#define DEVICE_FAMILY		 "PIC32CX"
-#define DEVICE_SERIES		 "PIC32CXSG61"
+#define DEVICE_NAME          "PIC32CX1025SG61128"
+#define DEVICE_ARCH          "CORTEX-M4"
+#define DEVICE_FAMILY        "PIC32CX"
+#define DEVICE_SERIES        "PIC32CXSG61"
 
 /* CPU clock frequency */
-#define CPU_CLOCK_FREQUENCY 120000000
+#define CPU_CLOCK_FREQUENCY 120000000U
 
 // *****************************************************************************
 // *****************************************************************************

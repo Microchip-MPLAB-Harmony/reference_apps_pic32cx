@@ -250,7 +250,7 @@ static void APP_CAM_Resize_Image(uint16_t* originalImage, uint16_t* resizedImage
     }
 }
 
-static void Oled_C_Click_Dispaly_Referesh(void)
+static void APP_CAM_Dispaly_Refresh(void)
 {
     GFX_DISP_INTF_PIN_EN_Clear();
     GFX_DISP_INTF_PIN_RW_Clear();
@@ -289,7 +289,7 @@ void APP_CAM_Initialize ( void )
 
 void APP_CAM_Tasks ( void )
 {
-    Oled_C_Click_Dispaly_Referesh();
+    APP_CAM_Dispaly_Refresh();
 
     /* Check the application's current state. */
     switch ( app_camData.state )
