@@ -3,6 +3,17 @@
 
 # Microchip MPLAB® Harmony 3 Release Notes
 
+## Reference Applications for PIC32CX MCUs Release v1.0.1
+
+- Updated MPLAB X Project configuration to remove -Werror and -Wall compiler options
+
+### Development Tools
+
+- [MPLAB® X IDE v6.25](https://www.microchip.com/mplab/mplab-x-ide)
+- [MPLAB® XC32 C/C++ Compiler v5.00](https://www.microchip.com/mplab/compilers)
+- MPLAB® X IDE plug-ins:
+  - MPLAB Code Configurator (MCC) v5.6.2
+
 ## Reference Applications for PIC32CX MCUs Release v1.0.0
 
 The following table provides the list of new applications:
